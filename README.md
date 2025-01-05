@@ -46,3 +46,19 @@ number + G: go to the typed line
 s: type :s/old/new/g, to replace the whole line old words with new words
 %s: type :%s/old/new/g, to replace the whole file old words with new words
 ```
+
+### 05
+```
+!: type ! to execute external shell command
+w: use w to write file
+r: retrieve the file
+```
+
+### 06
+```
+o: open a new line and enter insert mode
+e: move to the end of next word
+R: enter replace mode
+y: yank(copy)
+/[word]\c: ignore case for just one search 
+```
