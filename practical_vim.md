@@ -106,6 +106,7 @@ gUU | gUgU: act upon the current line
 | = | autoindent |
 | ! | filter {motion} lines through an external program |
 
+### chapter 03
 #### tip13
 ```
 in insert mode, we can do these:
@@ -134,3 +135,34 @@ in insert mode
 in insert mode
 <C-r>=: open a prompt at the bottom of the screen where we can type the expression that we want to evaluate
 ```
+
+#### tip17
+```
+<C-v>{code}: expects the numeric code to consist of three digits, "A" to '065'; to use unicode, we can use four-digit hexadecimal code by u{code}
+ga: we can see the hex, decimal, octal of this character
+```
+| keystrokes | effect |
+| :-: | :-: |
+| <C-v>{123} | insert character by decimal code |
+| <C-v>u{123} | insert character by hexadecimal code |
+| <C-v>{nondigit} | insert nondigit literally |
+| <C-k>{char1}{char2} | insert character represented by {char1}{char2} digraph |
+
+#### tip18
+```
+use ':h digraph-table' to see the usable list
+```
+
+#### tip19
+```
+gr | gR: virtual replace mode, overwrite characters of screen real estate rather than dealing with the actual character that would eventually be saved in a file  
+```
+
+### chapter 04
+#### tip20
+```
+iw: inner word
+<C-g>: toggle between visual and select mode
+```
+
+#### tip21
