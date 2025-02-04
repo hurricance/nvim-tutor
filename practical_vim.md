@@ -2,7 +2,7 @@
 
 ### chapter 01
 
-#### tip1
+#### tip 01
 ```
 '.': repeat the last change
 line one..
@@ -11,7 +11,7 @@ line three.
 line four.
 ```
 
-#### tip2
+#### tip 02
 ```
 don't repeat yourself
 two for the piece of one:
@@ -24,13 +24,13 @@ o A<CR>
 O ko
 ```
 
-#### tip3
+#### tip 03
 ```
 var foo = "method("+argument1+","+argument2+")";  
 to add the space between '+' character, we can simply use "f+, s + <ESC>, ;."
 ```
 
-#### tip4
+#### tip 04
 | intent | act | repeat | reverse |
 | :-: | :-: | :-: | :-: | 
 | make a change | {edit} | . | u |
@@ -143,10 +143,10 @@ ga: we can see the hex, decimal, octal of this character
 ```
 | keystrokes | effect |
 | :-: | :-: |
-| <C-v>{123} | insert character by decimal code |
-| <C-v>u{123} | insert character by hexadecimal code |
-| <C-v>{nondigit} | insert nondigit literally |
-| <C-k>{char1}{char2} | insert character represented by {char1}{char2} digraph |
+| \<C-v\>{123} | insert character by decimal code |
+| \<C-v\>u{123} | insert character by hexadecimal code |
+| \<C-v\>{nondigit} | insert nondigit literally |
+| \<C-k\>{char1}{char2} | insert character represented by {char1}{char2} digraph |
 
 #### tip18
 ```
@@ -166,3 +166,142 @@ iw: inner word
 ```
 
 #### tip21
+| command | effect |
+| :-: | :-: |
+| v | enable character-wise visual mode |
+| V | enable line_wise visual mode |
+| \<C-v\> | enable block-wise visual mode |
+| gv | reselect the last visual selection |
+| v / V / \<C-v\> | switch to normal mode from visual mode |
+| o | go to other end of highlighted text |
+
+#### tip22
+```
+Vj: line-wise visual mode, can select two lines
+```
+
+#### tip23
+```
+it: text-objects, inner tag block
+in visual mode, U/u can toggle case of characters
+gUit: toggle current line's it object to uppercase
+```
+
+#### tip24
+```
+Vr{character}: replace the whole the line with character
+```
+
+#### tip25
+```
+<C-v>j: to select visual-block of multi lines
+```
+
+#### tip26
+```
+in block visual-mode, use 'A' or 'I' to enter insert mode for multi lines
+'a' and 'i' form the first half of a text object in visual mode 
+```
+
+### chapter 05
+#### tip27
+| command | effect |
+| :-: | :-: |
+| [range]delete [x] | delete specified lines [into register x] |
+| [range]yank [x] | yank specified lines [into register x] | 
+| [range]put [x] | put the text from register x after the specified line |
+| [range]copy {address} | copy the specified lines to below the line specified by {address} |
+| [range]move {address} | move the specified lines to below the line specified by {address} |
+| [range]join | join the specified lines |
+| [range]normal {commands} | execute normal mode {commands} on each specified lin |
+| [range]substitute/{pattern}/{string}/[flags]| replace occurrences of {pattern} with {string} on each specified line |
+| [range]global/{pattern}/[cmd] | execute the ex command [cmd] on all specified lines where the {pattern} matches |
+```
+ex commands: the commands that we execute from command-line mode
+some commands are shared between insert mdoe and command-line mode: <C-w>, <C-u>, <C-v>, <C-k>, <C-r>{register}
+```
+
+#### tip28
+```
+1. use line numbers as an address
+2. specify a range of lines by address
+3. specify a range of lines by visual selection
+4. specify a range of lines by pattern
+5. modify an address using an offset
+```
+| symbol | address |
+| :-: | :-: |
+| 1 | first line of the file |
+| $ | last line of the file |
+| 0 | virtual line above first line of the file |
+| . | line where the cursor is placed |
+| 'm | line containing mark 'm' |
+| '< | start of visual selection |
+| '> | end of visual selection |
+| % | the entire file (shorthand for :1,$)
+
+#### tip29
+```
+t: replace
+m: move
+
+```
+| command | effect |
+| :-: | :-: |
+| :6t | copy line 6 to just below the current line |
+| :t6 | copy the current line to just below line 6 |
+| :t. | duplicate the current line (similar to normal mode yyp)
+| :t$ | copy the current line to the end of the file |
+| '<,'>t0 | copy the visually selected lines to the start of the file |
+
+#### tip30
+```
+{:normal A;}: to insert ';' in current line in command-line mode
+use normal to execute normal command in command-line mode
+```
+
+#### tip31
+```
+use '@:' to repeat the last ex command, after running '@:' for the first time, we can subsequently repeat it with the '@@' command
+```
+
+#### tip32
+```
+use <C-d> or <Tab> to trigger suggestions, if there are multiple suggestions, use <C-n> or <C-p> to switch suggestions
+```
+
+#### tip33
+```
+<C-r><C-w>: copies the word under the cursor and inserts it at the command-line prompt
+```
+
+#### tip34
+```
+{q:}: in normal mode, use this to meet the command-line window, we can see command history in that window
+<C-f>: in command-line mode, use this to switch to the command-line window, preserving a copy of the command that was typed at the prompt
+```
+| command | effect |
+| :-: | :-: |
+| q/ | open the command-line window with history of searches |
+| q: | open the command-line window with history of Ex commands |
+| <C-f> | switch from command-line mode to command-line window |
+
+#### tip35
+```
+<C-z>: use this to suspends the process that's running vim and returns control to bash, use 'fg' to bring it back
+Vim provides a convenient shortcut for setting the range of a :[range]!{filter}
+command such as this. The !{motion} operator command drops us into Command-Line mode and prepopulates the [range] with the lines covered by the
+specified {motion}
+```
+| command | effect |
+| :-: | :-: |
+| :shell | start a shell {return to vim by typing exit} |
+| :!{cmd} | execute {cmd} with the shell |
+| :read !{cmd} | execute {cmd} in the shell and insert its standard output below the cursor |
+| :[range]write !{cmd} | execute {cmd} in the shell with {range} lines as standard input |
+| :[range] !{filter} | filter the specified [range] through external program {filter} |
+
+#### tip36
+```
+if you need to execute sequence of Ex commands, you can save ourselves work by putting those commands in a script
+```
