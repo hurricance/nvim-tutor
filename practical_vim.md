@@ -41,7 +41,7 @@ to add the space between '+' character, we can simply use "f+, s + <ESC>, ;."
 | perform substitution | s/target/replacement | & | u |
 | execute a sequence of changes | qx{changes}q | @x | u |
 
-#### tip5
+#### tip 05
 ```
 ...We're waiting for content before the site can go live...
 ...If you are content with this, let's go ahead with it...
@@ -50,30 +50,30 @@ to add the space between '+' character, we can simply use "f+, s + <ESC>, ;."
 if you want to replace 'content' with 'copy' just for the last two lines, just use '/' to search content' and the move to the second 'content', then use 'cw' and type 'copy', type 'n' to find the next one and then use '.' to repeat the last change and so on.
 ```
 
-#### tip6
+#### tip 06
 the ideal: one keystroke to move, one keystroke to execute
 
 ### chapter 02
 
-#### tip7
+#### tip 07
 ```
 before making some changes, think first
 in normal mode, we can do many things
 ```
 
-#### tip8
+#### tip 08
 ```
 when you move around useing <Up>, <Down>, <Left>, <Right> in insert mode, the change will be reset
 ```
 
-#### tip9
+#### tip 09
 ```
 compose repeatable changes
 choose operation that can be repeatable first
 'daw': delete a word
 ```
 
-#### tip10
+#### tip 10 
 ```
 '<C-a>': increase number
 '<C-x>': decrease number
@@ -81,13 +81,13 @@ if the character of current cursor is not a number, it will look ahead and find 
 number formats: 007 is octal notation, if you don't expect this, use nrformats
 ```
 
-#### tip11
+#### tip 11
 ```
 don't count if you can repeat(granularity)
 use a count when it matters
 ```
 
-#### tip12
+#### tip 12
 ```
 operator + motion = action
 when an operator command is invoked in duplicate, it acts upon the current line
@@ -107,7 +107,7 @@ gUU | gUgU: act upon the current line
 | ! | filter {motion} lines through an external program |
 
 ### chapter 03
-#### tip13
+#### tip 13
 ```
 in insert mode, we can do these:
 <C-h>: delete back one charater(backspace)
@@ -115,7 +115,7 @@ in insert mode, we can do these:
 <C-u>: delete back to start of line
 ```
 
-#### tip14
+#### tip 14
 ```
 get back to normal mode(in insert mode)
 <ESC>: switch to normal mode
@@ -124,19 +124,19 @@ get back to normal mode(in insert mode)
 <C-o>zz: go to insert normal mode then redraws the screen with the current line in the middle of the window
 ```
 
-#### tip15
+#### tip 15
 ```
 in insert mode
 <C-r>{register}: paste the text stored in register
 <C-r><C-p>{register}: insert text literally and fixed any unintended indentation
 ```
-#### tip16
+#### tip 16
 ```
 in insert mode
 <C-r>=: open a prompt at the bottom of the screen where we can type the expression that we want to evaluate
 ```
 
-#### tip17
+#### tip 17
 ```
 <C-v>{code}: expects the numeric code to consist of three digits, "A" to '065'; to use unicode, we can use four-digit hexadecimal code by u{code}
 ga: we can see the hex, decimal, octal of this character
@@ -148,24 +148,24 @@ ga: we can see the hex, decimal, octal of this character
 | \<C-v\>{nondigit} | insert nondigit literally |
 | \<C-k\>{char1}{char2} | insert character represented by {char1}{char2} digraph |
 
-#### tip18
+#### tip 18
 ```
 use ':h digraph-table' to see the usable list
 ```
 
-#### tip19
+#### tip 19
 ```
 gr | gR: virtual replace mode, overwrite characters of screen real estate rather than dealing with the actual character that would eventually be saved in a file  
 ```
 
 ### chapter 04
-#### tip20
+#### tip 20
 ```
 iw: inner word
 <C-g>: toggle between visual and select mode
 ```
 
-#### tip21
+#### tip 21
 | command | effect |
 | :-: | :-: |
 | v | enable character-wise visual mode |
@@ -175,36 +175,36 @@ iw: inner word
 | v / V / \<C-v\> | switch to normal mode from visual mode |
 | o | go to other end of highlighted text |
 
-#### tip22
+#### tip 22
 ```
 Vj: line-wise visual mode, can select two lines
 ```
 
-#### tip23
+#### tip 23
 ```
 it: text-objects, inner tag block
 in visual mode, U/u can toggle case of characters
 gUit: toggle current line's it object to uppercase
 ```
 
-#### tip24
+#### tip 24
 ```
 Vr{character}: replace the whole the line with character
 ```
 
-#### tip25
+#### tip 25
 ```
 <C-v>j: to select visual-block of multi lines
 ```
 
-#### tip26
+#### tip 26
 ```
 in block visual-mode, use 'A' or 'I' to enter insert mode for multi lines
 'a' and 'i' form the first half of a text object in visual mode 
 ```
 
 ### chapter 05
-#### tip27
+#### tip 27
 | command | effect |
 | :-: | :-: |
 | [range]delete [x] | delete specified lines [into register x] |
@@ -221,7 +221,7 @@ ex commands: the commands that we execute from command-line mode
 some commands are shared between insert mdoe and command-line mode: <C-w>, <C-u>, <C-v>, <C-k>, <C-r>{register}
 ```
 
-#### tip28
+#### tip 28
 ```
 1. use line numbers as an address
 2. specify a range of lines by address
@@ -240,7 +240,7 @@ some commands are shared between insert mdoe and command-line mode: <C-w>, <C-u>
 | '> | end of visual selection |
 | % | the entire file (shorthand for :1,$)
 
-#### tip29
+#### tip 29
 ```
 t: replace
 m: move
@@ -254,28 +254,28 @@ m: move
 | :t$ | copy the current line to the end of the file |
 | '<,'>t0 | copy the visually selected lines to the start of the file |
 
-#### tip30
+#### tip 30
 ```
 {:normal A;}: to insert ';' in current line in command-line mode
 use normal to execute normal command in command-line mode
 ```
 
-#### tip31
+#### tip 31
 ```
 use '@:' to repeat the last ex command, after running '@:' for the first time, we can subsequently repeat it with the '@@' command
 ```
 
-#### tip32
+#### tip 32
 ```
 use <C-d> or <Tab> to trigger suggestions, if there are multiple suggestions, use <C-n> or <C-p> to switch suggestions
 ```
 
-#### tip33
+#### tip 33
 ```
 <C-r><C-w>: copies the word under the cursor and inserts it at the command-line prompt
 ```
 
-#### tip34
+#### tip 34
 ```
 {q:}: in normal mode, use this to meet the command-line window, we can see command history in that window
 <C-f>: in command-line mode, use this to switch to the command-line window, preserving a copy of the command that was typed at the prompt
@@ -286,7 +286,7 @@ use <C-d> or <Tab> to trigger suggestions, if there are multiple suggestions, us
 | q: | open the command-line window with history of Ex commands |
 | <C-f> | switch from command-line mode to command-line window |
 
-#### tip35
+#### tip 35
 ```
 <C-z>: use this to suspends the process that's running vim and returns control to bash, use 'fg' to bring it back
 Vim provides a convenient shortcut for setting the range of a :[range]!{filter}
@@ -301,7 +301,7 @@ specified {motion}
 | :[range]write !{cmd} | execute {cmd} in the shell with {range} lines as standard input |
 | :[range] !{filter} | filter the specified [range] through external program {filter} |
 
-#### tip36
+#### tip 36
 ```
 if you need to execute sequence of Ex commands, you can save ourselves work by putting those commands in a script
 ```
