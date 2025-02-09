@@ -305,3 +305,9 @@ specified {motion}
 ```
 if you need to execute sequence of Ex commands, you can save ourselves work by putting those commands in a script
 ```
+
+### chapter 06
+#### tip 37
+```
+
+```
